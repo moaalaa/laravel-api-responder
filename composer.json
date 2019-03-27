@@ -1,6 +1,17 @@
 {
     "name": "moaalaa/laravel-api-responder",
     "description": "A Package For Easy And Structured Api Response",
+    "keywords": [
+        "API",
+        "api",
+        "resources",
+        "responses",
+        "respond",
+        "Laravel",
+        "package",
+        "moaalaa"
+    ],
+    "homepage": "https://github.com/moaalaa/laravel-api-responder",
     "license": "MIT",
     "authors": [
         {
@@ -8,10 +19,19 @@
             "email": "moaalaa16@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "laravel/framework": "^5.5.*"
+    },
     "autoload": {
         "psr-4": {
             "MoaAlaa\\ApiResponder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MoaAlaa\\ApiResponder\\ApiResponderServiceProvider"
+            ]
         }
     }
 }
