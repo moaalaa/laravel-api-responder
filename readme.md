@@ -36,7 +36,7 @@ All The Rest Of The Documentation WIll Explain How To Install And Every Method P
 Via Composer
 
 ```bash
-$ composer require MoaAlaa/api-responder
+$ composer require moaalaa/laravel-api-responder
 ```
 
 If You Do Not Run Laravel 5.5 (Or Higher), Then Add The Service Provider In **`config/app.php`**:
