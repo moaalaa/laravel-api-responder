@@ -1,0 +1,17 @@
+{
+    "name": "moaalaa/api-responder",
+    "description": "A Package For Easy And Structured Api Response",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Alaa El-Din",
+            "email": "moaalaa16@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MoaAlaa\\ApiResponder": "src/"
+        }
+    }
+}
