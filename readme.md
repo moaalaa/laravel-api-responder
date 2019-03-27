@@ -1,4 +1,4 @@
-# Api Responder
+# Api Laravel Responder
 
 Api Responder Is A Simple Package For Api Response Using Laravel Resources With Some Features With Some Useful Readable And Chainable Methods
 
