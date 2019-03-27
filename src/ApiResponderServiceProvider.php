@@ -14,6 +14,8 @@ class ApiResponderServiceProvider extends ServiceProvider
 
     public function register()
     {
-        
+        $this->app->singleton(ApiManager::class, function ($app) {
+            return new ApiManager();
+        });   
     }
 }
