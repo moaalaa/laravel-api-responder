@@ -29,7 +29,7 @@ Api Responder Is A Simple Package For Api Response Using Laravel Resources With 
 ## Getting Started
 Remember This Package Not Perfect It's Just Like Some Helpers For Me During Development.
 You Can Visit [Laravel Official Docs](https://laravel.com/docs/master/eloquent-resource) About Api Resources For Deeper Understanding
-All The Rest Of The Documentation WIll Explain How To Install And Every Method Provided To You
+All The Rest Of The Documentation Will Explain How To Install And Every Method Provided To You
 
 ## Installation
 
@@ -48,7 +48,7 @@ MoaAlaa\ApiResponder\ApiResponderServiceProvider::class,
 If you do run the package on Laravel 5.5+, [package auto-discovery](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518) takes care of the magic of adding the service provider.
 
 ## Usage
-Using ApiResponder Very Easy And Straights Forward Just Use **`ApiResponder` Trait** Anywhere (I Usually Use It In Controllers So The Usage And Examples Will Be Also).
+Using ApiResponder is Very Easy And Straights Forward Just Use **`ApiResponder` Trait** Anywhere (I Usually Use It In Controllers So The Usage And Examples Will Be Also).
 
 ```php
 <?php
@@ -70,7 +70,7 @@ class HomeController extends Controller
 
 ### Basic Usage
 
-By Using **`ApiResponder` Trait** You Will Have Access To Method Called **`this->api()`** and It Will Make All The Magic For You It Give You Access For Many Useful Methods Important One Is **`response()`** That Will Sernd the Response For You
+By Using **`ApiResponder` Trait** You Will Have Access To Method Called **`api()`** and It Will Make All The Magic For You, It Give You Access For Many Useful Methods Important One Is **`response()`** That Will Send the Response For You
 
 ```php
 <?php
