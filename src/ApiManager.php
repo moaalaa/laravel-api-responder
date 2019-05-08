@@ -16,7 +16,7 @@ class ApiManager
     private $additional = [];
 
     /**
-	 * Return The Api For The Given Data
+	 * Return The Api For The Given Data.
 	 *
 	 * @example $this->response(...)
 	 * 
@@ -41,7 +41,7 @@ class ApiManager
     }
 
     /**
-	 * Just Wrapper For "$this->response"
+	 * Wrap "$this->response" function.
 	 *
 	 * @example $this->responseWith($data)
 	 * 
@@ -59,8 +59,8 @@ class ApiManager
     }
 
     /**
-	 * Send An Error Response 
-	 * Just Wrapper For "$this->response()" for more clear
+	 * Send An Error Response.
+	 * Just Wrapper For "$this->response()" for more clear.
 	 * 
 	 * @example $this->error($error)
 	 * 
@@ -75,7 +75,7 @@ class ApiManager
     }
 
     /**
-	 * Send An Safe Error Response "When Using Try Catch Blocks"
+	 * Send a Safe Error Response "When Using Try Catch Blocks".
 	 * 
      * @example $this->SafeError($exception)
      * 
@@ -98,7 +98,7 @@ class ApiManager
     }
 
     /**
-	 * Validate The Incoming Request
+	 * Validate The Incoming Request.
 	 *
      * @example $this->apiValidate(...roles...)
      *  
@@ -112,7 +112,7 @@ class ApiManager
     }
 
     /**
-	 * Set The Pagination Limit
+	 * Set The Pagination Limit.
 	 *
      * @example $this->setPaginationLimit(...)
      * 
@@ -128,7 +128,7 @@ class ApiManager
     }
 
     /**
-	 * Get The Pagination Limit
+	 * Get The Pagination Limit.
 	 *
      * @example $this->getPaginationLimit()
      * 
@@ -140,7 +140,7 @@ class ApiManager
     }
 
     /**
-	 * Append Additional Data To Response
+	 * Append Additional Data To Response.
 	 *
 	 * @example $this->with(['key' => 'val'])->response(...)
 	 * @example $this->withKey()->response(...)
@@ -157,7 +157,7 @@ class ApiManager
     }
 
     /**
-	 * Change The Wrapping Of The Response
+	 * Change The Wrapping Of The Response.
 	 *
 	 * @example $this->wrapping('data')->response(...)
 	 * 
@@ -173,7 +173,7 @@ class ApiManager
     }
 
     /**
-	 * Change The Wrapping Of The Response
+	 * Change The Wrapping Of The Response.
      * Just An Alias For "$this->wrapping()"
 	 *
 	 * @example $this->setWrapping('data')->response(...)
@@ -188,7 +188,7 @@ class ApiManager
     }
 
     /**
-	 * Get The Wrapping Of The Response
+	 * Get The Wrapping Of The Response.
 	 *
 	 * @example $this->getWrapping()
 	 * 
@@ -200,7 +200,7 @@ class ApiManager
     }
 
     /**
-	 * Determine Whether Return A Resource, A Collection Or Error Response
+	 * Determine Whether Return A Resource, A Collection Or Error Response.
 	 * 
  	 * @param  mixed|null      $data
 	 * @param  string|null $error 
@@ -232,7 +232,7 @@ class ApiManager
     }
 
     /**
-	 * Return A Collection Response
+	 * Return A Collection Response.
 	 * 
 	 * @param  mixed      $data
 	 * 
@@ -244,7 +244,7 @@ class ApiManager
     }
 
     /**
-	 * Return A Resource Response
+	 * Return A Resource Response.
 	 * 
 	 * @param  mixed      $data
 	 * 
@@ -256,7 +256,7 @@ class ApiManager
     }
 
     /**
-	 * Determine If The Code Is Listed In Whitelist Or Not 
+	 * Determine If The Code Is Listed In Whitelist Or Not.
 	 * 
 	 * @param  int|integer $code
 	 * 
@@ -268,7 +268,7 @@ class ApiManager
     }
 
     /**
-	 * Get Proper DataType For Return Response
+	 * Get Proper DataType For Return Response.
 	 * EX: If "$data" is "String" It Will Convert To "Collection"
 	 *  EX: If "$data" is "Array" It Will Send As It Is
 	 *
