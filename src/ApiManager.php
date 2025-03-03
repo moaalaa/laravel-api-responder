@@ -16,18 +16,18 @@ class ApiManager
     private $additional = [];
 
     /**
-	 * Return The Api For The Given Data.
-	 *
-	 * @example $this->response(...)
-	 * 
-	 * @param  mixed $data
-	 * @param  string|array|null $error 
-	 * @param  int|integer $code
-	 * @param  array $additional
-	 * @param  string $wrap
-	 * 
-	 * @return object
-	 */
+     * Return The Api For The Given Data.
+     *
+     * @example - $this->response(...)
+     * 
+     * @param  mixed $data
+     * @param  string|array|null $error 
+     * @param  int|integer $code
+     * @param  array $additional
+     * @param  string $wrap
+     * 
+     * @return object
+     */
     public function response($data, $error = null, int $code = 200, $additional = [], $wrap = 'payload')
     {
         // Change Laravel Wrapper Key Name Default Is "data" 
@@ -41,49 +41,49 @@ class ApiManager
     }
 
     /**
-	 * Wrap "$this->response" function.
-	 *
-	 * @example $this->responseWith($data)
-	 * 
-	 * @param  mixed $data
-	 * @param  string|array|null $error 
-	 * @param  int|integer $code
-	 * @param  array $additional
-	 * @param  string $wrap
-	 * 
-	 * @return object
-	 */
+     * Wrap "$this->response" function.
+     *
+     * @example - $this->responseWith($data)
+     * 
+     * @param  mixed $data
+     * @param  string|array|null $error 
+     * @param  int|integer $code
+     * @param  array $additional
+     * @param  string $wrap
+     * 
+     * @return object
+     */
     public function responseWith($data, $error = null, int $code = 200, $additional = [], $wrap = 'payload')
     {
         return $this->response($data, $error, $code, $additional, $wrap);
     }
 
     /**
-	 * Send An Error Response.
-	 * Just Wrapper For "$this->response()" for more clear.
-	 * 
-	 * @example $this->error($error)
-	 * 
-	 * @param  string|array|null $error
-	 * @param  int    $code 
-	 * 
-	 * @return object
-	 */
+     * Send An Error Response.
+     * Just Wrapper For "$this->response()" for more clear.
+     * 
+     * @example - $this->error($error)
+     * 
+     * @param  string|array|null $error
+     * @param  int    $code 
+     * 
+     * @return object
+     */
     public function error($error, int $code)
     {
         return $this->response(null, $error, $code);
     }
 
     /**
-	 * Send a Safe Error Response "When Using Try Catch Blocks".
-	 * 
-     * @example $this->SafeError($exception)
+     * Send a Safe Error Response "When Using Try Catch Blocks".
+     * 
+     * @example - $this->SafeError($exception)
      * 
      * @param  \Exception $exception
-	 * @param  int    $code 
+     * @param  int    $code 
      * 
-	 * @return object
-	 */
+     * @return object
+     */
     public function safeError($exception, $code = 500)
     {
         $message = '';
@@ -98,28 +98,28 @@ class ApiManager
     }
 
     /**
-	 * Validate The Incoming Request.
-	 *
-     * @example $this->apiValidate(...roles...)
+     * Validate The Incoming Request.
+     *
+     * @example - $this->apiValidate(...roles...)
      *  
-	 * @param  array  $roles
-	 * 
-	 * @return array
-	 */
+     * @param  array  $roles
+     * 
+     * @return array
+     */
     public function validate(array $roles)
     {
         return request()->validate($roles);
     }
 
     /**
-	 * Set The Pagination Limit.
-	 *
-     * @example $this->setPaginationLimit(...)
+     * Set The Pagination Limit.
+     *
+     * @example - $this->setPaginationLimit(...)
      * 
-	 * @param int|integer $limit
+     * @param int|integer $limit
      * 
-	 * @return void
-	 */
+     * @return void
+     */
     public function setPaginationLimit(int $limit)
     {
         $this->paginateLimit = $limit;
@@ -128,27 +128,27 @@ class ApiManager
     }
 
     /**
-	 * Get The Pagination Limit.
-	 *
-     * @example $this->getPaginationLimit()
+     * Get The Pagination Limit.
+     *
+     * @example - $this->getPaginationLimit()
      * 
-	 * @return int|integer
-	 */
+     * @return int|integer
+     */
     public function getPaginationLimit()
     {
         return $this->paginateLimit;
     }
 
     /**
-	 * Append Additional Data To Response.
-	 *
-	 * @example $this->with(['key' => 'val'])->response(...)
-	 * @example $this->withKey()->response(...)
-	 * 
-	 * @param array $data
+     * Append Additional Data To Response.
+     *
+     * @example - $this->with(['key' => 'val'])->response(...)
+     * @example - $this->withKey()->response(...)
      * 
-	 * @return $this
-	 */
+     * @param array $data
+     * 
+     * @return static
+     */
     public function with(array $data)
     {
         $this->additional = array_merge($this->additional, $data);
@@ -157,14 +157,14 @@ class ApiManager
     }
 
     /**
-	 * Change The Wrapping Of The Response.
-	 *
-	 * @example $this->wrapping('data')->response(...)
-	 * 
-	 * @param string $wrapping
-	 * 
-     * @return $this
-	 */
+     * Change The Wrapping Of The Response.
+     *
+     * @example - $this->wrapping('data')->response(...)
+     * 
+     * @param string $wrapping
+     * 
+     * @return static
+     */
     public function wrapping(string $wrapping)
     {
         $this->wrapping = $wrapping;
@@ -173,42 +173,42 @@ class ApiManager
     }
 
     /**
-	 * Change The Wrapping Of The Response.
+     * Change The Wrapping Of The Response.
      * Just An Alias For "$this->wrapping()"
-	 *
-	 * @example $this->setWrapping('data')->response(...)
-	 * 
-	 * @param string $wrapping
-	 * 
-     * @return $this
-	 */
+     *
+     * @example - $this->setWrapping('data')->response(...)
+     * 
+     * @param string $wrapping
+     * 
+     * @return static
+     */
     public function setWrapping(string $wrapping)
     {
         return $this->wrapping($wrapping);
     }
 
     /**
-	 * Get The Wrapping Of The Response.
-	 *
-	 * @example $this->getWrapping()
-	 * 
-	 * @return string
-	 */
+     * Get The Wrapping Of The Response.
+     *
+     * @example - $this->getWrapping()
+     * 
+     * @return string
+     */
     public function getWrapping()
     {
         return $this->wrapping;
     }
 
     /**
-	 * Determine Whether Return A Resource, A Collection Or Error Response.
-	 * 
- 	 * @param  mixed|null      $data
-	 * @param  string|null $error 
-	 * @param  int|integer $code
-	 * @param  array $additional
-	 * 
-	 * @return object
-	 */
+     * Determine Whether Return A Resource, A Collection Or Error Response.
+     * 
+     * @param  mixed|null      $data
+     * @param  string|null $error 
+     * @param  int|integer $code
+     * @param  array $additional
+     * 
+     * @return object
+     */
     private function apiResourceCollection($data, $error, $code, $additional)
     {
         if (is_null($data) || (is_array($data) && count($data) <= 0)) {
@@ -232,50 +232,50 @@ class ApiManager
     }
 
     /**
-	 * Return A Collection Response.
-	 * 
-	 * @param  mixed      $data
-	 * 
-	 * @return object
-	 */
+     * Return A Collection Response.
+     * 
+     * @param  mixed      $data
+     * 
+     * @return object
+     */
     private function apiCollection($data)
     {
         return StanderApiResource::collection($data);
     }
 
     /**
-	 * Return A Resource Response.
-	 * 
-	 * @param  mixed      $data
-	 * 
-	 * @return object
-	 */
+     * Return A Resource Response.
+     * 
+     * @param  mixed      $data
+     * 
+     * @return object
+     */
     private function apiResource($data)
     {
         return new StanderApiResource($data);
     }
 
     /**
-	 * Determine If The Code Is Listed In Whitelist Or Not.
-	 * 
-	 * @param  int|integer $code
-	 * 
-	 * @return bool|boolean
-	 */
+     * Determine If The Code Is Listed In Whitelist Or Not.
+     * 
+     * @param  int|integer $code
+     * 
+     * @return bool|boolean
+     */
     private function checkStatusCodes($code = 200)
     {
         return in_array($code, $this->statusCodes);
     }
 
     /**
-	 * Get Proper DataType For Return Response.
-	 * EX: If "$data" is "String" It Will Convert To "Collection"
-	 *  EX: If "$data" is "Array" It Will Send As It Is
-	 *
-	 * @param mixed $data
+     * Get Proper DataType For Return Response.
+     * EX: If "$data" is "String" It Will Convert To "Collection"
+     *  EX: If "$data" is "Array" It Will Send As It Is
+     *
+     * @param mixed $data
      * 
-	 * @return mixed
-	 */
+     * @return mixed
+     */
     private function getProperDataType($data)
     {
         if (!is_array($data)) {
