@@ -8,13 +8,13 @@ trait ApiResponder
 	 * Return The ApiManager Instance For More Readability
 	 * When Using "ApiResponder" Apis Methods And Properties
 	 * 
-	 * @example $this->api()->response(...)
-	 * @example $this->api()->with(...)->response(...)
+	 * @example - $this->api()->response(...)
+	 * @example - $this->api()->with(...)->response(...)
 	 * 
-	 * @return $this
+	 * @return ApiManager
 	 */
-	public function api()
+	public function api(): ApiManager
 	{
-		return resolve(ApiManager::class);
+		return new ApiManager;
 	}
 }
